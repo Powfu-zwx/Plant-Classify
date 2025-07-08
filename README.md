@@ -51,40 +51,63 @@
 ## 📁 项目结构说明
 
 plant_classifier/
+
 ├── data/ # 存放训练/测试图像（本地）Kaggle本地可下载，这里不上传了
+
 │ └── train/ # 12 个类别文件夹
+
 ├── model.py # 构建模型结构（支持 resnet18/resnet34）
+
 ├── train_resnet18.py # 训练 ResNet18 主逻辑
+
 ├── train_resnet34.py # 训练 ResNet34 主逻辑
+
 ├── ensemble.py # 融合两个模型生成提交文件
+
 ├── evaluate.py # TTA、混淆矩阵、错误分析等可视化
+
 ├── data_utils.py # 加载数据集、标签编码、DataLoader 构造
+
 ├── transforms.py # 定义数据增强与图像预处理
+
 ├── submission.csv # 提交文件样例
+
 ├── best_model_resnet18.pth # ResNet18 最优模型权重
+
 ├── best_model_resnet34.pth # ResNet34 最优模型权重
+
 └── README.md
 
 ## 📦 依赖环境
 bash
+
 pip install -r requirements.txt：
+
 torch>=2.0.0
+
 torchvision>=0.15.0
+
 scikit-learn
+
 matplotlib
+
 seaborn
+
 numpy
+
 pillow
 
 🏁 快速开始
 
 🔧 1. 训练模型
 python train_resnet18.py
+
 python train_resnet34.py
 
 🤝 2. 模型融合
 
 python ensemble.py
+
 会生成 submission.csv 文件用于提交。
 
 📊 3. 评估模型
@@ -92,15 +115,22 @@ python ensemble.py
 python evaluate.py
 
 展示：
+
 TTA后验证集准确率
+
 混淆矩阵图
+
 前9个错误分类样本
 
 📌 结果成绩
 模型	验证集准确率	Kaggle提交分数
+
 ResNet18	~91.7%	0.95969
+
 ResNet34	~91.9%	0.95895
+
 融合模型	✅ 93.6%	✅ 0.96347
+
 
 📬 联系我
 如有任何交流合作或疑问，欢迎联系我：
